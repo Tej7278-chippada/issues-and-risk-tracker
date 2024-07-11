@@ -1,0 +1,190 @@
+<div class="container">
+
+    <!-- <form [formGroup]="empForm">  -->
+      <div class="mt-5 box">
+  
+          <div class="form-row">
+  
+              <div class="col-md-12">
+  
+                  <h1>Employee Details </h1>
+  
+                    <div class="form-group mt-4">
+  
+                           <label>Employee ID</label>  
+  
+                    </div>
+  
+                    <div class="form-row" style="margin-top:-10px">
+  
+                         <div class="col">
+  
+                              <input type="number" class="form-control" formControlName="empid" />
+  
+                          </div>    
+  
+                      </div>  
+  
+                </div>
+  
+              <div class="col-md-12">
+  
+                  <div class="form-group mt-4">
+  
+                          <label>Employee Name</label>  
+  
+                  </div>
+  
+                  <div class="form-row" style="margin-top:-10px">
+  
+                       <div class="col">
+  
+                           <input type="text" class="form-control" formControlName="empname" />
+  
+                       </div>
+  
+                   </div>
+  
+              </div>
+  
+              <div class="col-md-12">
+  
+                  <div class="form-group mt-4">
+  
+                      <label>City</label>  
+  
+                  </div>
+  
+                  <div class="form-row" style="margin-top:-10px">
+  
+                      <div class="col">
+  
+                          <input type="text" class="form-control" formControlName="city" />
+  
+                      </div>
+  
+                  </div>
+  
+              </div>
+  
+              <div class="col-md-12">
+  
+                  <div class="form-group mt-4">
+  
+                      <label>Contact No</label>  
+  
+                  </div>
+  
+                  <div class="form-row" style="margin-top:-10px">
+  
+                      <div class="col">
+  
+                          <input type="number" class="form-control" formControlName="contactNo" minlength="10" maxlength="10" />
+  
+                      </div>
+  
+                  </div>
+  
+              </div>
+  
+     
+  
+              <div class="col-md-12">
+  
+                   <div class="form-group mt-4">
+  
+                      <label>Gender</label>  
+  
+                  </div>
+  
+                  <div class="form-row " style="margin-top:-10px">
+  
+                      <div class="col">
+  
+                          <input type="text" class="form-control" formControlName="gender" />
+  
+                      </div>
+  
+                  </div>
+  
+              </div>
+  
+              <div class="form-row mt-4">
+  
+                  <div class="col-6">
+  
+                       <button type="button" class="btn btn-primary" (click)="added()" > Add
+  
+                       </button> &nbsp; &nbsp;
+  
+                       <button type="button" class="btn btn-primary" (click)="reset()" > Reset
+  
+                      </button>
+  
+                  </div>
+  
+                 
+  
+              </div>
+  
+          </div>
+  
+      </div>
+  
+  <!-- </form> -->
+  
+  <div class="col-md-8 mt-4 mb-4">
+  
+    <table class="table table-bordered">
+  
+        <thead>
+  
+          <tr>
+  
+            <th>ID</th>
+  
+            <th>Name </th>
+  
+            <th>City </th>
+  
+            <th>Contact No </th>
+  
+            <th>Gender </th>
+  
+            <th>edit</th>
+  
+            <th>Action</th>
+  
+          </tr>
+  
+         </thead>
+  
+      <tbody>
+  
+          <tr *ngFor="let item of listData">
+  
+              <td><span>{{item.empid}}</span></td>
+  
+              <td><span>{{item.empname}}</span></td>
+  
+              <td><span>{{item.city}}</span></td>
+  
+              <td><span>{{item.contactNo}}</span></td>
+  
+              <td><span>{{item.gender}}</span></td>
+  
+              <td>
+  
+                  <button type="button" class="btn btn-primary" (click)="editItem()" > edit
+  
+                  </button>
+  
+              </td>
+  
+              <td>
+  
+                  <button type="button" class="btn btn-primary" (click)="removeItem(item)" > Remove
+  
+                  </button></td></tr></tbody>
+  
+  </table>

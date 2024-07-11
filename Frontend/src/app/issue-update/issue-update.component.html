@@ -1,0 +1,299 @@
+<div class="container">
+  <!-- <div>
+    <h2>Selected Data : </h2>
+    <pre>{{ getIssues | json }} </pre>
+   </div> -->
+  
+<div>&nbsp;</div>
+<div >
+  <table>
+    <tr>
+      <td>Enter Id of the Issue:</td>
+      <td>
+        <input type="number" #id placeholder="&nbsp;{{ selectedData.id}}" />
+        <div *ngIf="selectedData">
+          
+          <p>ID: {{ selectedData.id }}</p>
+          
+        </div>
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Issue assigned to:</td>
+      <td>
+        <input type="text" #name placeholder="&nbsp;{{ selectedData.name}}" />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter status of the Issue:</td>
+      <td>
+        <input type="text" #status />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter Description of the Issue:</td>
+      <td>
+        <input type="text" #desc />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Issue start date :</td>
+      <td>
+        <input type="date" #stdt />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Issue close date :</td>
+      <td>
+        <input type="date" #cldt />
+        <br />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="updateIssue(id.value, name.value, status.value, desc.value, stdt.value, cldt.value);"  (click)="refreshPage()" >
+          Update Record
+        </button>
+
+      </td>
+    </tr>
+  </table>
+</div>
+<br />
+<!-- <button type="submit" class="btn btn-primary"  (click)="refreshPage()" >Submit</button>&nbsp; -->
+
+<!-- <div *ngIf="DELETE_BOOK">
+  <table>
+    <tr>
+      <td>Enter Id of the book:</td>
+      <td>
+        <input type="number" #id />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="deleteBook(id.value); DELETE_BOOK = false">
+          Delete Record
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="error" *ngIf="errorMessage">{{ errorMessage }}</div> -->
+
+<!-- <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issues" (click)="displayData(issue.id)">
+        
+        <td>{{ issue.id }}</td>
+        <td>{{ issue.name }}</td>
+        <td>{{ issue.status }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+  <!-- <a>jyfjh</a> -->
+  <!-- <div *ngIf="selectedData">
+    <h3>Selected Data</h3>
+    <p>ID: {{ selectedData.id }}</p>
+    <p>Name: {{ selectedData.name }}</p>
+    <p>Age: {{ selectedData.status }}</p>
+  </div> -->
+  <!-- <div >
+    <a>&nbsp;</a>
+    <h3>Risk Updates</h3>
+    <p>Issue ID &nbsp;&nbsp;&nbsp;          : {{ selectedData.id }}</p>
+    <p>Assigned To &nbsp;&nbsp;&nbsp;&nbsp;       : {{ selectedData.name }}</p>
+    <p>Issue Description &nbsp;&nbsp;  : {{ selectedData.status }}</p>
+    <p>Issue Start Date &nbsp;&nbsp; : {{ selectedData.stdt }}</p>
+    <p>Reason for Delay &nbsp;&nbsp; : {{ selectedData.reason }}</p>
+
+    
+  </div> -->
+  <div class="container" >
+
+    <div *ngIf="selectedData">
+      <a>&nbsp;</a>
+      <h3>Issue Updates</h3>
+      <!-- <p>Issue ID &nbsp;&nbsp;&nbsp;          : {{ selectedData.id }}</p>
+      <p>Assigned To &nbsp;&nbsp;&nbsp;&nbsp;       : {{ selectedData.name }}</p>
+      <p>Issue Description &nbsp;&nbsp;  : {{ selectedData.status }}</p>
+      <p>Issue Start Date &nbsp;&nbsp; : {{ selectedData.stdt }}</p>
+      <p>Issue End Date &nbsp;    : {{ selectedData.cldt }}</p> -->
+    
+    <div >
+      <table>
+        <tr>
+          <td>Enter Id of the Issue:</td>
+          <td>
+            <input class="form-control" type="number" #id  placeholder="&nbsp;{{ selectedData.id}}" readonly/>
+            <!-- <div *ngIf="selectedData">
+              
+              <p>ID: {{ selectedData.id }}</p>
+              
+            </div> -->
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Issue assigned to:</td>
+          <td>
+            <input class="form-control" type="text" #name  placeholder="&nbsp;{{ selectedData.name}}" />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Enter status of the Issue:</td>
+          <td>
+            <input  type="text" #status placeholder="&nbsp;{{ selectedData.status}}" />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Enter Description of the Issue:</td>
+          <td>
+            <input type="text" #desc placeholder="&nbsp;{{ selectedData.desc}}"  />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Issue start date :</td>
+          <td>
+            <input class="form-control" type="date" #stdt placeholder="&nbsp;{{ selectedData.stdt}}" />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Issue close date :</td>
+          <td>
+            <input type="date" #cldt />
+            <br />
+          </td>
+        </tr>
+    
+        <tr>
+          <td>
+            <button class="btn btn-primary" (click)="updateIssue(id.value, name.value, status.value, desc.value, stdt.value, cldt.value); UPDATE_BOOK = false"  [routerLink]='["/create-issue"]' routerLinkActive="active">
+              Update Record
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  </div>
+ 
+
+  <div  >
+
+    <div *ngIf="selectedData">
+      <a>&nbsp;</a>
+      <h3>Issue Updates</h3>
+      <p>Issue ID &nbsp;&nbsp;&nbsp;          : {{ selectedData.id }}</p>
+      <p>Assigned To &nbsp;&nbsp;&nbsp;&nbsp;       : {{ selectedData.name }}</p>
+      <p>Issue Description &nbsp;&nbsp;  : {{ selectedData.status }}</p>
+      <p>Issue Start Date &nbsp;&nbsp; : {{ selectedData.stdt }}</p>
+      <p>Issue End Date &nbsp;    : {{ selectedData.cldt }}</p>
+    
+    <div >
+      <table>
+        <tr>
+          <td>Enter Id of the Issue:</td>
+          <td>
+            <input class="form-control" type="number" #id  placeholder="&nbsp;{{ selectedData.id}}" readonly/>
+            <!-- <div *ngIf="selectedData">
+              
+              <p>ID: {{ selectedData.id }}</p>
+              
+            </div> -->
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Issue assigned to:</td>
+          <td>
+            <input class="form-control" type="text" #name  placeholder="&nbsp;{{ selectedData.name}}" />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Enter status of the Issue:</td>
+          <td>
+            <input  type="text" #status placeholder="&nbsp;{{ selectedData.status}}" />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Enter Description of the Issue:</td>
+          <td>
+            <input type="text" #desc placeholder="&nbsp;{{ selectedData.desc}}"  />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Issue start date :</td>
+          <td>
+            <input class="form-control" type="date" #stdt placeholder="&nbsp;{{ selectedData.stdt}}" />
+            <br />
+          </td>
+        </tr>
+        <br />
+    
+        <tr>
+          <td>Issue close date :</td>
+          <td>
+            <input type="date" #cldt />
+            <br />
+          </td>
+        </tr>
+    
+        <tr>
+          <td>
+            <button class="btn btn-primary" (click)="updateIssue(id.value, name.value, status.value, desc.value, stdt.value, cldt.value); "  [routerLink]='["/create-issue"]' routerLinkActive="active">
+              Update Record
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>

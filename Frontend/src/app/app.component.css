@@ -1,0 +1,9 @@
+p {color:red}
+
+.highlight {
+    border: 2px solid coral;
+    background-color: orange;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

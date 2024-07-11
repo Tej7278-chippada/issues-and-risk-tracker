@@ -1,0 +1,157 @@
+<!-- <div class="container">
+<div>&nbsp;</div>
+<div >
+    <table>
+      <tr>
+        <td>Enter Id of the Risk:</td>
+        <td>
+          <input type="number" #id />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Risk assigned to:</td>
+        <td>
+          <input type="text" #name />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Enter status of the Risk:</td>
+        <td>
+          <input type="text" #status />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Enter Description of the Risk:</td>
+        <td>
+          <input type="text" #desc />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Risk start date :</td>
+        <td>
+          <input type="date" #stdt />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Risk close date :</td>
+        <td>
+          <input type="date" #cldt />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Reason for Delay :</td>
+        <td>
+          <input type="text" #reason />
+          <br />
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <div>&nbsp;</div>
+          <button class="btn btn-primary" (click)="updateRisk(id.value, name.value, status.value, desc.value, stdt.value, cldt.value, reason.value); UPDATE_RISK = false" [routerLink]='["/risk"]' routerLinkActive="active">
+            Update Record
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+</div> -->
+
+<div class="container">
+  <div>&nbsp;</div>
+  <div >
+    <table>
+      <tr>
+        <td>Enter Id of the Risk:</td>
+        <td>
+          <input type="number" #id placeholder="&nbsp;{{ selectedData.id}}" />
+          <div *ngIf="selectedData">
+            
+            <p>ID: {{ selectedData.id }}</p>
+            
+          </div>
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Risk assigned to:</td>
+        <td>
+          <input type="text" #name placeholder="&nbsp;{{ selectedData.name}}" />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Enter status of the Risk:</td>
+        <td>
+          <input type="text" #status />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Enter Description of the Risk:</td>
+        <td>
+          <input type="text" #desc />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Risk start date :</td>
+        <td>
+          <input type="date" #stdt />
+          <br />
+        </td>
+      </tr>
+      <br />
+  
+      <tr>
+        <td>Risk close date :</td>
+        <td>
+          <input type="date" #cldt />
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>Reason for Delay :</td>
+        <td>
+          <input type="text" #reason />
+          <br />
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <button class="btn btn-primary" (click)="updateRisk(id.value, name.value, status.value, desc.value, stdt.value, cldt.value, reason.value); UPDATE_RISK = false" (click)="refreshPage()">
+            Update Record
+          </button>
+  
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />

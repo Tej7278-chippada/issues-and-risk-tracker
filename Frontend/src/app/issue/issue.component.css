@@ -1,0 +1,134 @@
+.books {
+    /* margin: 0 0 2em 0; */
+    list-style-type: none;
+    padding: 0;
+    /* width: 15em; */
+    width: max-content;
+    /* background-color: #d2be0e; */
+}
+.books li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    /* background-color: #EEE; */
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+}
+.books li:hover {
+    color: #607D8B;
+    /* background-color: #DDD; */
+    left: .1em;
+}
+/* .books .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+} */
+
+.container{
+    width: max-content;
+    height: max-content;
+    /* height: 300px; */
+    /* width: 300px; */
+    /* padding-top: 50px; */
+    /* padding-left: 42px; */
+    border-color: rgb(0, 0, 255);
+    text-align: center;
+    background-color: #ffffff30;
+    border-radius: 30px;
+}
+
+.btn{
+    /* margin-left: 70px; */
+    width: max-content;
+    background-color: rgb(235, 217, 21);
+    color: black;
+    
+
+}
+.btn:hover{
+    color: rgb(255, 255, 255);
+    background-color: green;
+}
+table{
+    margin-left: 180px ;
+    text-align: center;
+    border-collapse: collaplse;
+    width: 80%;
+
+
+
+}
+th, td{
+    text-align:left;
+    padding: 8px;
+    /* border-bottom: 1px solid #ddd; */
+    /* color: #ffffff; */
+}
+th{
+    background-color: #f2f2f2;
+    color:#333;
+    /* border-radius: 10px; */
+}
+tr{
+    background-color: #ebebeb;
+    
+}
+tr:hover{
+    background-color: #ebebeb;
+    /* background-color: #0000008f; */
+
+}
+a{
+    padding-top: 1rem;
+    /* text-align: left; */
+    margin-left: 670px;
+
+    font-size: large;
+    font-family: "Times New Roman";
+    /* font-weight: bold; */
+    color: #d2be0e;
+}
+
+.search{
+    color:#ffffff;
+    background-color: #ffffff84;
+    border-radius: 20px;
+    border-color: #d2be0e;
+    border-top: #3aaae3;
+    border-style:solid;
+    
+}
+button.mat-icon-button{
+    color: #0f0f0f;
+    background-color:#fdfdfd1f;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    transition: background-color 0.3s;
+    /* background-size:auto; */
+
+}
+button.mat-icon-button:hover {
+    background-color: #eeeeee4c;
+}
+mat-icon {
+    color: #ebebeb;
+    margin-right: 4px;
+}
+button.mat-icon-button:hover mat-icon {
+    color: #070707;
+}
+

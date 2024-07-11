@@ -1,0 +1,50 @@
+strong{
+    font-size:30px ;
+    /* width: 600px; */
+    /* margin-left: 100px; */
+    /* padding: 300px; */
+    margin:  350px;
+
+
+
+
+}
+nav{
+    background: #45454580;
+}
+.input-group{
+    width: 600px;
+    margin-left: 100px;
+    padding: 3px;
+}
+.navbar-brand{
+    margin-left: 30px;
+    font-weight:600;
+    
+}
+.navbar-brand a:link{
+    text-decoration: none;
+}
+.glyphicon{
+    color:white;
+  }
+.nav-link{
+    color: white; 
+    /* margin: 5px 12px;   */
+    border: 1px solid transparent;
+}
+
+.nav-link:hover{
+    border: 1px solid white;
+}
+.nav-item{
+    margin: 0 12px;
+    font-weight:500;
+}
+/* .mt-2{
+    color: rgb(3, 3, 252);
+
+} */
+.container-fluid{
+    align-items: center;
+}

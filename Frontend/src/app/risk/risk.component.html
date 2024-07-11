@@ -1,0 +1,298 @@
+<!-- <h2>{{ title }}</h2>
+<h2>My Books</h2> -->
+
+<!-- <ul class="books">
+  <li *ngFor="let book of books">
+    <span class="badge">{{ book.id }}</span> {{ book.name }} {{book.status}} {{book.desc}} {{book.stdt}} {{book.cldt}}
+  </li>
+</ul> -->
+
+<!-- <button  class="btn btn-primary" (click)="ADD_BOOK = true">Add Book</button>&nbsp;
+<button class="btn btn-primary" (click)="UPDATE_BOOK = true">Update Book</button>&nbsp;
+<button class="btn btn-primary" (click)="DELETE_BOOK = true">Delete Book</button> -->
+<!-- <br /> -->
+
+<!-- <div *ngIf="ADD_BOOK">
+  <table>
+    <tr>
+      <td>Enter Id of the book:</td>
+      <td>
+        <input type="number" #id />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter Name of the Book:</td>
+      <td>
+        <input type="text" #name />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter status of the Book:</td>
+      <td>
+        <input type="text" #status />
+        <br />
+      </td>
+    </tr>
+    <br/>
+
+    <tr>
+      <td>Enter Description of the Book:</td>
+      <td>
+        <input type="text" #desc />
+        <br />
+      </td>
+    </tr>
+    <br/>
+
+    <tr>
+      <td>Enter start date:</td>
+      <td>
+        <input type="date" #stdt />
+        <br />
+      </td>
+    </tr>
+    <br/>
+
+    <tr>
+      <td>Enter close date:</td>
+      <td>
+        <input type="date" #cldt />
+        <br />
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="addBook(id.value, name.value, status.value, desc.value, stdt.value, cldt.value); ADD_BOOK = false">
+          Add Record
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <br />
+</div> -->
+
+<!--<div *ngIf="UPDATE_BOOK">
+  <table>
+    <tr>
+      <td>Enter Id of the book:</td>
+      <td>
+        <input type="number" #id />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter Name of the Book:</td>
+      <td>
+        <input type="text" #name />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter status of the Book:</td>
+      <td>
+        <input type="text" #status />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter Description of the Book:</td>
+      <td>
+        <input type="text" #desc />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter start date :</td>
+      <td>
+        <input type="date" #stdt />
+        <br />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>Enter close date :</td>
+      <td>
+        <input type="date" #cldt />
+        <br />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="updateRisk(id.value, name.value, status.value, desc.value, stdt.value, cldt.value); UPDATE_BOOK = false">
+          Update Record
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+<br />
+
+<div *ngIf="DELETE_BOOK">
+  <table>
+    <tr>
+      <td>Enter Id of the book:</td>
+      <td>
+        <input type="number" #id />
+      </td>
+    </tr>
+    <br />
+
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="deleteBook(id.value); DELETE_BOOK = false">
+          Delete Record
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="error" *ngIf="errorMessage">{{ errorMessage }}</div> -->
+
+<div>
+  <!-- <button mat-icon-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button> -->
+  <button mat-icon-button (click)="loadRisks()" >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <input class="search" type="text" [(ngModel)]="searchKeyword" placeholder="Search by ID"/>
+  <button class="btn" (click)="search()" >Search</button>
+</div>
+
+<!-- <ul *ngIf="issues.length > 0">
+  <li *ngFor="let issue of issues" >
+    {{ issue.id === -1 ? issue.name : issue.id + ' - ' + issue.name }} 
+  </li>
+</ul> -->
+<div *ngIf="risks.length === 0" >
+  NO RESULTS FOUND...
+</div>
+
+<div >
+  <!-- <p >Issue Screen</p>
+  <nav>&nbsp;
+      <div>
+      <a  routerLinkActive="active">Project Daily Issues</a>&nbsp;
+      </div>
+      &nbsp;
+      <div>
+      <a  routerLinkActive="active">Project Daily Risks</a>
+      </div>
+  </nav> -->
+  <!-- <router-outlet></router-outlet> -->
+  <div>
+  <a  [routerLink]='["/create-risk"]' routerLinkActive="active" >Create Risk</a>&nbsp;
+  </div> &nbsp;
+  <!-- <router-outlet></router-outlet> -->
+
+  
+
+<div >
+  <table>
+      <thead>
+          <tr>
+              <th>Risk Id</th>
+              <th>Assigned To</th>
+              <th>Status</th>
+              <th>Description</th>
+              <th>Start Date</th>
+              <th>Closed Date</th>
+              <th>Reason for Delay</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td   ><ul class="books">   <!-- (click)="openPopup().displayData(risk.id)" -->
+                <li *ngFor="let risk of risks"   (click)="openPopupRisk()"   >
+                  <span class="badge">RS_0{{ risk.id }}</span> 
+                </li>
+              </ul></td>
+
+              <td><ul class="books">
+                <li *ngFor="let risk of risks">
+                  <span class="badge"></span> {{ risk.name }}
+                </li>
+              </ul></td>
+
+              <td><ul class="books">
+                <li *ngFor="let risk of risks">
+                  <span class="badge"></span> {{ risk.status }}
+                </li>
+              </ul></td>
+
+              <td><ul class="books">
+                <li *ngFor="let risk of risks">
+                  <span class="badge"></span> {{ risk.desc }}
+                </li>
+              </ul></td>
+
+              <td><ul class="books">
+                <li *ngFor="let risk of risks">
+                  <span class="badge"></span> {{ risk.stdt }}
+                </li>
+              </ul></td>
+
+              <td><ul class="books">
+                <li *ngFor="let risk of risks">
+                  <span class="badge"></span> {{ risk.cldt }}
+                </li>
+              </ul></td>
+
+              <td><ul class="books">
+                <li *ngFor="let risk of risks">
+                  <span class="badge"></span> {{ risk.reason }}
+                </li>
+              </ul></td>
+          </tr>
+          <!-- <tr>
+              <td  routerLinkActive="active">IS9992</td>
+              <td>Teja</td>
+              <td>Pending</td>
+              <td>Need snaps of issue</td>
+              <td>06-04-2023</td>
+              <td>09-04-2023</td>
+          </tr> -->
+      </tbody>
+  </table>
+    <!-- <router-outlet></router-outlet> -->
+
+</div>&nbsp;
+
+<div class="container" >
+
+  <div *ngIf="selectedData">
+    <a>&nbsp;</a>
+    <h3>Risk Updates</h3>
+    <p>Issue ID &nbsp;&nbsp;&nbsp;          : {{ selectedData.id }}</p>
+    <p>Assigned To &nbsp;&nbsp;&nbsp;&nbsp;       : {{ selectedData.name }}</p>
+    <p>Issue Description &nbsp;&nbsp;  : {{ selectedData.status }}</p>
+    <p>Issue Start Date &nbsp;&nbsp; : {{ selectedData.stdt }}</p>
+    <p>Reason for Delay &nbsp;&nbsp; : {{ selectedData.reason }}</p>
+
+    
+  </div>
+</div>
+
+  <div>&nbsp;&nbsp;&nbsp;</div>
+  
+</div>
+<!-- <router-outlet></router-outlet> -->
